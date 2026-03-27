@@ -145,6 +145,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
+<img width="578" height="252" alt="DA_UC01_GabrielFreitas" src="https://github.com/user-attachments/assets/3e33f9e4-aa4e-4581-b830-2236422324b5" />
 
 ---
 
@@ -184,7 +185,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-
+<img width="660" height="280" alt="DA_UC02_GabrielFreitas" src="https://github.com/user-attachments/assets/f145e31b-3ae6-4db2-84f3-0d244baac82f" />
 
 ---
 
@@ -218,7 +219,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-
+<img width="515" height="252" alt="DA_UC03_GabrielFreitas" src="https://github.com/user-attachments/assets/ca8ff1e2-1c32-4470-be6f-7b2c88a8f550" />
 
 ---
 
@@ -257,7 +258,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-
+<img width="660" height="187" alt="DA_UC04_GabrielFreitas" src="https://github.com/user-attachments/assets/92f323f7-585e-486e-8ee4-6e7d26afb18f" />
 
 ---
 
