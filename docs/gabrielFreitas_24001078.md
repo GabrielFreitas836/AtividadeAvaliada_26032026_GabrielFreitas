@@ -293,7 +293,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-
+<img width="793" height="303" alt="DA_UC05_GabrielFreitas" src="https://github.com/user-attachments/assets/f6aed460-e09e-48bc-8d97-752e087acd8f" />
 
 ---
 
@@ -333,6 +333,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
+<img width="1306" height="384" alt="DA_UC06_GabrielFreitas" src="https://github.com/user-attachments/assets/b8e239fd-4a5f-418c-ac43-c2b5ae0b88de" />
 
 ---
 
@@ -373,6 +374,8 @@ Para **cada caso de uso**, utilize o template abaixo:
     3. O atendente não pode realizar a devolutiva do produto ao estoque físico, nem do sistema
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
+<img width="2484" height="477" alt="DA_UC07_GabrielFreitas" src="https://github.com/user-attachments/assets/d98d0a93-9290-4bfd-9df8-2bdf66085098" />
+
 ---
 
 ## **UC08 — Atualização por perda de produtos**
@@ -409,6 +412,8 @@ Para **cada caso de uso**, utilize o template abaixo:
     3. O atendente não pode realizar a perda do produto para não causar mais inconsistências ao estoque do sistema 
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+<img width="1508" height="308" alt="DA_UC08_GabrielFreitas" src="https://github.com/user-attachments/assets/590992c3-c2cb-43d0-86f7-067ed3acc3c0" />
 
 ---
 
