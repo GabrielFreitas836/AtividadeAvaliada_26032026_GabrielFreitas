@@ -36,18 +36,17 @@ Liste e descreva **cada RN** de forma clara.
 
 - O setor financeiro deve ser capaz de consultar facilmente lançamentos em aberto, atrasados e pagos, além de gerar relatórios
 
-
 **RN04 — Permissões de atendente**
 
-- O atendente poderá apenas registrar vendas, consultar produtos e identificar clientes
+- O atendente deve ser capaz de registrar vendas, consultar produtos e identificar clientes
 
 **RN05 — Permissões de farmacêutico**
 
-- O farmacêutico poderá apenas validar receitas e autorizar vendas controladas
+- O farmacêutico deve ser capaz de validar receitas e autorizar vendas controladas
 
 **RN06 — Permissões de administrador**
 
-- O administrador poderá apenas administrar usuários, permissões e parâmetros gerais
+- O administrador deve ser capaz de administrar usuários, permissões e parâmetros gerais
 
 
 ---
@@ -75,7 +74,10 @@ Liste os requisitos funcionais do seu MVP.
 
 - O sistema deve atualizar o estoque automaticamente após qualquer registro de venda, devolução, perda, transferência, reposição pós compra e compras feitas aos fornecedores
   
-**RF06 —**  
+**RF06 — Registro de compras de fornecedores**
+
+- O sistema deve permitir ao atendente registrar compras de fornecedores, informando o produto adquirido, quantidade, data, valor total, fornecedor e unidade da farmácia
+
 **RF07 —**  
 **RF08 —**
 
@@ -94,10 +96,13 @@ Liste os RNFs do sistema conforme seu MVP.
 
 - O sistema deve realizar os processos de venda e cadastro de clientes em  até 2s
 
-**RNF03 —**  
-**RNF04 —**  
+**RNF03 — Interface amigável**
 
-(Adicione mais se quiser.)
+- O sistema deve possuir uma interface intuitiva e amigável em que os elementos visuais tenham espaço significante 
+
+**RNF04 — Intervalo de tolerância à falhas**
+
+- O sistema deve manter um intervalo de falhas superior a 720 horas
 
 ---
 
@@ -140,7 +145,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-![Diagrama de Atividade_UC01](DA_UC01_GabrielFreitas.png)
+
 ---
 
 ## **UC02 — Vincular compras ao histórico**
@@ -179,7 +184,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-![Diagrama de Atividade_UC02](DA_UC02_GabrielFreitas.png)
+
 
 ---
 
@@ -213,7 +218,7 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-![Diagrama de Atividade_UC03](DA_UC03_GabrielFreitas.png)
+
 
 ---
 
@@ -252,101 +257,155 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
-![Diagrama de Atividade_UC04](DA_UC04_GabrielFreitas.png)
+
 
 ---
 
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
+## **UC05 — Registrar compras de fornecedores**
+**Ator(es):**
+
+- Gerente
+- Fornecedor
+
+**Descrição:**
+
+- Registro de compras de fornecedores no sistema pelo gerente
+
+**Pré-condições:**
+
+- A unidade da farmácia deve ter requisitado a compra de produtos ao fornecedor
+
 **Pós-condições:**  
 
-### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
+- Compra registrada no sistema
+- Atualização automática de estoque, aumentando a quantidade dos produtos comprados
 
-### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
+### Fluxo Principal
+1. O gerente requisita a compra de novas quantidades de produtos ao fornecedor
+2. O fornecedor faz a entrega dos produtos requisitados
+3. O gerente registra a compra no sistema
+4. O gerente registra a compra na guia "contas a pagar"
+4. A quantidade do produto comprado é aumentada no estoque automaticamente 
 
 ### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
+- **Include:** UC06 — Registrar compras na guia "contas a pagar"  
 
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+
+
+---
+
+## **UC06 — Registrar compras na guia "contas a pagar**
+**Ator(es):**
+
+- Gerente
+- Financeiro
+- Sistema
+
+**Descrição:**
+
+- Registro de pagamentos de fornecedores, despesas da unidade, impostos e serviços na guia "contas a pagar" pelo gerente
+
+**Pré-condições:**
+
+- Existência de,pelo menos, uma conta em aberto
+
+**Pós-condições:**  
+
+- Conta registrada na guia "contas a pagar" pelo gerente
+- O gerente marca inicialmente o status do pagamento como "Aberto"
+
+### Fluxo Principal
+1.  O gerente realiza alguma ação que gera um pagamento
+2.  O gerente registra esse pagamento em "contas a pagar"
+3.  O gerente marca inicialmente o status do pagamento como "Aberto"
+
+### Fluxos Alternativos / Exceções
+- **FA01 — Realização do pagamento de conta em aberto**
+    1. O Financeiro realiza o pagamento da conta
+    2. O gerente marca o status do pagamento como "Concluído"
+    3. O sistema automaticamente remove a conta da guia "contas a pagar" 
+
+### Relacionamentos 
+- **Extend:** UC05 — Registrar compras de fornecedores
+
+### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+
+---
+
+## **UC07 — Atualização por devolução de produtos**
+**Ator(es):**
+
+- Atendente
+- Cliente
+
+**Descrição:** 
+
+- Atualização de estoque pelo atendente aumentando a quantidade do produto após a devolução pelo cliente
+
+**Pré-condições:**
+
+- Comprovante da compra em posse do cliente
+
+**Pós-condições:**  
+
+- Devolutiva do produto realizada com sucesso
+- Aumento da quantidade do produto no estoque
+
+### Fluxo Principal
+1. O cliente requisita a devolução do produto
+2. O atendente requisita o comprovante da compra
+3. O cliente evidencia o comprovante
+4. O atendente confirma a validade do comprovante
+5. O atendente realiza a devolutiva do produto para o estoque físico
+6. O atendente atualiza o estoque no sistema, aumentando a quantidade do produto em estoque
+
+### Fluxos Alternativos / Exceções
+- **FA01 — Sem comprovante de compra**
+    1. O cliente não possui o comprovante da compra
+    2. O atendente não pode realizar a devolutiva do produto ao estoque físico, nem do sistema 
+- **FA02 — Comprovante de compra inválido**
+    1. O cliente mostra um comprovante inválido
+    2. O atendente confirma a invalidade do comprovante
+    3. O atendente não pode realizar a devolutiva do produto ao estoque físico, nem do sistema
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
 ---
 
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
+## **UC08 — Atualização por perda de produtos**
+**Ator(es):**
+
+- Atendente
+
+**Descrição:**
+
+- Atualização de estoque pelo atendente diminuindo a quantidade do produto após a perda do mesmo
+
+**Pré-condições:**
+
+- Quantidade do produto no estoque não pode ser nulo
+
 **Pós-condições:**  
 
-### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
-
-### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
-
-### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
-
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
-
----
-
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
-**Pós-condições:**  
+- Diminuição da quantidade do produto no estoque
 
 ### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
+1. O atendente verifica a quantidade do produto no estoque
+2. O atendente confirma que a quantidade do produto não é nula no estoque do sistema
+3. O atendente remove o produto do estoque físico
+4. O atendente atualiza o estoque no sistema, diminuindo a quantidade do produto em estoque
 
 ### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
-
-### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
-
-### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
-
----
-
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
-**Pós-condições:**  
-
-### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
-
-### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
-
-### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
+- **FA01 — Quantidade nula no sistema com apenas o produto a ser descartado**
+    1. O atendente confirma que a quantidade do produto é nula no estoque do sistema
+    2. O atendente confirma que só existe apenas o produto a ser descartado no estoque físico
+    3. O atendente remove o produto do estoque físico
+- **FA02 — Quantidade nula no sistema com quantidade maior que uma unidade do produto a ser descartado**
+    1. O atendente confirma que a quantidade do produto é nula no estoque do sistema
+    2. O atendente confirma que existe mais de uma unidade do produto a ser descartado no estoque físico
+    3. O atendente não pode realizar a perda do produto para não causar mais inconsistências ao estoque do sistema 
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
