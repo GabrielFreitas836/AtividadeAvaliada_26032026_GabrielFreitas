@@ -78,10 +78,13 @@ Liste os requisitos funcionais do seu MVP.
 
 - O sistema deve permitir ao atendente registrar compras de fornecedores, informando o produto adquirido, quantidade, data, valor total, fornecedor e unidade da farmácia
 
-**RF07 —**  
-**RF08 —**
+**RF07 — Filtragem de produtos**
 
-(Adicione mais se quiser.)
+- O sistema deve permitir ao atendente pesquisar produtos a partir da descrição, preço de venda, unidade de medida ou fabricante
+
+**RF08 — Registro de novos produtos**
+
+- O sistema deve permitir ao gerente registrar novos produtos, informando a descrição, preço de venda, unidade de medida e fabricante
 
 ---
 
@@ -214,7 +217,8 @@ Para **cada caso de uso**, utilize o template abaixo:
 4. O atendente marca o status da venda diretamente como "Concluído" 
   
 
-### Relacionamentos  
+### Relacionamentos
+- **Includes:** UC09 — Filtragem de produtos
 - **Extend:** UC04 — Registro de compras à prazo 
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
@@ -417,53 +421,64 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ---
 
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
-**Pós-condições:**  
+## **UC09 — Filtragem de produtos**
+**Ator(es):**
+
+- Atendente
+- Sistema
+
+**Descrição:**
+
+- Filtragem de produtos no sistema pelo atendente
+
+**Pós-condições:**
+
+- Produto achado eficientemente usando a filtragem por descrição, preço de venda, unidade de medida ou fabricante
 
 ### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
+1. O atendente filtra um ou mais produtos por descrição, preço de venda, unidade de medida ou fabricante
+2. O sistema procura alguma correspondência
+3. O sistema identifica o porduto exibindo os parâmetros de busca e também sua quantidade em estoque
 
 ### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
+- **FA01 — Sem correspondência do produto**
+    1. O sistema procura alguma correspondência
+    2. O sistema não localiza nenhum dado correspondente
+    3. O sistema exibe uma mensagem de erro
+ 
+### Relacionamentos  
+- **Extend:**
 
-### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
+    UC03 — Registrar compras
+
+    UC04 — Registro de compras à prazo
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
 ---
 
-## **UCXX — Nome do Caso de Uso**
-**Ator(es):**  
-**Descrição:**  
-**Pré-condições:**  
+## **UC10 — Registro de novos produtos**
+**Ator(es):**
+
+- Gerente
+
+**Descrição:**
+
+- Registro de novos produtos no sistema pelo gerente, informando a descrição, preço de venda, unidade de medida e fabricante
+
 **Pós-condições:**  
 
-### Fluxo Principal
-1.  
-2.  
-3.  
-4.  
+- Novo produto registrado pelo gerente no sistema
+- Estoque atualizado com a quantidade comprada
 
-### Fluxos Alternativos / Exceções
-- FA01 —  
-- FA02 —  
+### Fluxo Principal
+1. O gerente acessa o sistema
+2. O gerente registra um novo produto, informando a descrição, preço de venda, unidade de medida e fabricante
+3. O gerente atualiza o estoque com a quantidade comprada
+ 
 
 ### Relacionamentos
-- **Include:** (listar quando aplicável)  
-- **Extend:** (listar quando aplicável)  
+- **Include:** UC05 — Registrar compras de fornecedores  
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
-
----
-> Repita essa estrutura para **todos os seus casos de uso** (mínimo 10).
-
 
