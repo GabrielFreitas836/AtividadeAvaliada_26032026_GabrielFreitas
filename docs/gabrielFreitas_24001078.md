@@ -2,27 +2,20 @@
 **Sistema Integrado de Gestão de Farmácia — MVP Definido pelo Estudante**
 
 Aluno: Gabriel da Silva Freitas 
+
 RA: 24001078
+
 Data: 26/03/2026 
 
 ---
 
 # 1. Definição do MVP
-Descreva aqui **qual parte do sistema** foi incluída no seu MVP.  
-Explique claramente:
 
-- O que está **dentro** do MVP  
-- O que está **fora** do MVP  
-- Por que você fez essas escolhas  
-
-
-> Esse MVP cobre o processo de venda desde a identificação do cliente até o registro da venda em si. Ele não detalha os processos relacionados à parte financeira e geração de relatórios. A escolha desse processo específico se deve às possibilidades enormes de análise e levantamento dos processos envolvidos na venda de produtos, registro em estoque e cadastro de clientes 
-
+> Esse MVP cobre o processo de venda desde a identificação do cliente até o registro da venda em si. Na parte financeira, só cobre a gestão da guia 'contas a pagar. Ele não detalha o processo de geração de relatórios. A escolha desse processo específico se deve às possibilidades enormes de análise e levantamento dos processos envolvidos na venda de produtos, registro em estoque, gestão de contas e cadastro de clientes
 
 ---
 
 # 2. Regras de Negócio (mínimo: 5)
-Liste e descreva **cada RN** de forma clara.
 
 **RN01 — Condição mínima de venda de um produto**
 
@@ -48,11 +41,9 @@ Liste e descreva **cada RN** de forma clara.
 
 - O administrador deve ser capaz de administrar usuários, permissões e parâmetros gerais
 
-
 ---
 
 # 3. Requisitos Funcionais (mínimo: 8)
-Liste os requisitos funcionais do seu MVP.
 
 **RF01 — Verificação de quantidade mínima do produto no estoque**  
 
@@ -89,7 +80,6 @@ Liste os requisitos funcionais do seu MVP.
 ---
 
 # 🛡 4. Requisitos Não Funcionais (mínimo: 4)
-Liste os RNFs do sistema conforme seu MVP.
 
 **RNF01 — Integridade de produtos no estoque**
 
@@ -115,12 +105,14 @@ Liste os RNFs do sistema conforme seu MVP.
 - relação entre eles e atores
 - pelo menos 3 includes
 - pelo menos 3 extends
+  
+<img width="892" height="737" alt="diagrama_UC_geral01_GabrielFreitas" src="https://github.com/user-attachments/assets/ff795feb-3402-483e-89ff-0d5af8710872" />
+
+<img width="1348" height="621" alt="diagrama_UC_geral02_GabrielFreitas" src="https://github.com/user-attachments/assets/58b06cbe-85a5-4a50-a36a-b81e372b027e" />
 
 ---
 
 # 6. Documentação dos Casos de Uso
-Para **cada caso de uso**, utilize o template abaixo:
----
 
 ## **UC01 — Cadastro de cliente no sistema**
 **Ator(es):**
@@ -455,6 +447,8 @@ Para **cada caso de uso**, utilize o template abaixo:
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
 
+<img width="1381" height="315" alt="DA_UC09_GabrielFreitas" src="https://github.com/user-attachments/assets/813efc32-7c85-4fa8-aa51-7eecd3e7cfbd" />
+
 ---
 
 ## **UC10 — Registro de novos produtos**
@@ -481,4 +475,6 @@ Para **cada caso de uso**, utilize o template abaixo:
 - **Include:** UC05 — Registrar compras de fornecedores  
 
 ### Inserir o diagrama de atividades do Caso de Uso, demonstrando tudo o fluxo princial e alternativos/exceções.
+
+<img width="589" height="166" alt="DA_UC10_GabrielFreitas" src="https://github.com/user-attachments/assets/b39d79f1-9e9f-4b4a-b5f6-5cd96a5d9f14" />
 
